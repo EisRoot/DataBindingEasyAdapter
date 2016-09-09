@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="itemText"
@@ -7,11 +7,17 @@
     </data>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:background="#ccbb04"
-    android:layout_height="45dp">
+    android:background="#14150c"
+    android:layout_margin="10dp"
+    app:click="@{itemText.click}"
+    android:gravity="center"
+    android:layout_height="60dp">
     <TextView
+
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:textColor="#ffffff"
         android:layout_gravity="center_vertical"
         android:text="@{itemText.text}"
         />

@@ -11,7 +11,6 @@ import com.databindingadapter.eis.databindingeasyadapter.ViewModel;
  */
 public class MainActivityViewModel extends BaseObservable {
     public ObservableArrayList<ViewModel> viewModels = new ObservableArrayList<>();
-
-
+    public int span=3;
 
 }
