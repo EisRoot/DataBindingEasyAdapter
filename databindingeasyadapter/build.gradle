@@ -1,4 +1,27 @@
 apply plugin: 'com.android.library'
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'databindingAdapter'
+
+    publishedGroupId = 'com.eis.android'
+    libraryName = 'databindingAdapter'
+    artifact = 'databindingAdapter'
+
+    libraryDescription = 'A easy way to use listview or recyclerview in data bind for android developer'
+
+    siteUrl = 'https://github.com/EisRoot/DataBindingEasyAdapter'
+    gitUrl = 'https://github.com/EisRoot/DataBindingEasyAdapter.git'
+
+    libraryVersion = '0.1.0'
+
+    developerId = 'eis'
+    developerName = 'hubin'
+    developerEmail = 'j@bns.so'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
 
 android {
     compileSdkVersion 24
@@ -19,6 +42,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
 }
 
 dependencies {
@@ -27,3 +51,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:recyclerview-v7:24.2.0'
 }
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
