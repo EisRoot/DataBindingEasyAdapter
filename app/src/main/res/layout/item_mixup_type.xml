@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="itemMixup"
+            type="com.databindingadapter.eis.databindingadapter.ItemMixupType"/>
+    </data>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#f70101"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="45dp">
+    <ImageView
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:textColor="#161616"
+        android:text="@{itemMixup.text}"/>
+
+</LinearLayout>
+    </layout>
