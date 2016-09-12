@@ -65,8 +65,7 @@ public class ItemImageType extends ViewModel {
     }
 }
 ```
-when you finsh those steps above,you can use it in your activity without warried about creating a baseadapter.
-If you want to show mutli-type in your list,creat more ’itemView‘.
+
 当你完成了以上的步骤，你就可以在你的Activity中使用它了。
 
 如果你想显示多Type的列表的话，应当在创建几个类似的itemView。
@@ -160,6 +159,7 @@ ListView 的使用如下:
 ```
 
 还有什么想了解的，看代码吧
+邮箱：j@bns.so
 
 ## License
 
