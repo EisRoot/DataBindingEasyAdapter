@@ -1,19 +1,20 @@
 # DataBinding_EasyAdapter
-an easy way to use multi-type listView or recyclerView in Data Binding for android developer.
+能使你非常轻松的在DataBinding中使用listView和RecyclerView
 
 ![gif](/Demo.gif)
-## Download
-First,you should use [the google's Data Binding framework](https://developer.android.com/tools/data-binding/guide.html)(If you are useing it,you could skip this step)
+## 下载
+首先，你得使用 [谷歌的 Data Binding 框架](https://developer.android.com/tools/data-binding/guide.html)(如果你正在的使用的话
+你可以跳过这一步)
 
-Then,Add this line to your denpencie group:
+接着,把下面这一行加入你的项目的依赖里去:
 
 ```groovy
 compile'com.databindingadapter.eis:databindingeasyadapter:1.0.0'
 ```
 
-##Useage
+##使用范围
 
-You should provide a itemView extends ViewModel. and bind it to your xml.
+首先声明一个继承自ViewModel的类，itemView。将它绑定到相应的布局文件（item布局文件）中去。
 
 
 ```xml
@@ -40,7 +41,7 @@ You should provide a itemView extends ViewModel. and bind it to your xml.
 </layout>
 
 ```
-**setBr_id()** requires itemView's variable name.**setLayout_id()** requires itemView's xml.
+**setBr_id()** 需要itemView对应的variable name.**setLayout_id()** 需要对应的布局文件名.
 ```java
 public class ItemImageType extends ViewModel {
     
@@ -66,10 +67,14 @@ public class ItemImageType extends ViewModel {
 ```
 when you finsh those steps above,you can use it in your activity without warried about creating a baseadapter.
 If you want to show mutli-type in your list,creat more ’itemView‘.
+当你完成了以上的步骤，你就可以在你的Activity中使用它了。
 
-In Order to use in your activity,it requires:
+如果你想显示多Type的列表的话，应当在创建几个类似的itemView。
 
-Step1 :Use 'ObservableArrayList'(it will updata your view automatically) to collcet those 'ItemView'(Any Class extends from ViewModel is OK);
+在你的activity中使用的步骤：
+
+第一步 使用ObservableArrayList来做itemView的集合，这个集合必须初始化，否则会爆空指针异常
+
 ```java
 public class MainActivityViewModel extends BaseObservable {
     public ObservableArrayList<ViewModel> viewModels = new ObservableArrayList<>();
@@ -77,7 +82,7 @@ public class MainActivityViewModel extends BaseObservable {
 }
 ```
 
-Step2 :Bind ’ObservableArrayList‘ to your recyclerView
+第二步 将ObservableArrayList绑定到你列表控件上去
 
 ```xml
 <android.support.v7.widget.RecyclerView
@@ -86,7 +91,8 @@ Step2 :Bind ’ObservableArrayList‘ to your recyclerView
     app:RA_bind="@{main.viewModels}">
 ```
 
-Step3:Add 'ItemView' to your 'ObservableArrayList'.
+
+第三步 在Databinding的时候，将你实例化的itemView放入ObservableArrayList集合
 
 ```java
 
@@ -110,9 +116,9 @@ Step3:Add 'ItemView' to your 'ObservableArrayList'.
     }
 ```
 
-And finally,you could see it works on your project.
+最后编译运行，就能看到效果了
 
-ListView should be used like this:
+ListView 的使用如下:
 ```xml
 <ListView
             android:layout_width="match_parent"
@@ -120,7 +126,7 @@ ListView should be used like this:
             app:BA_bind="@{main.viewModels}">
 ```
 
-RecyclerView with GridLayoutManager shoule be used like this:
+网格式RecyclerView 的使用如下:
 
 ```xml
  <android.support.v7.widget.RecyclerView
@@ -130,7 +136,7 @@ RecyclerView with GridLayoutManager shoule be used like this:
             app:RA_span="@{main.span}"
             >
 ```
-RecyclerView with StaggeredGridLayoutManager shoule be used like this:
+瀑布式RecyclerView 的使用如下:
 
 ```xml
   <android.support.v7.widget.RecyclerView
@@ -140,8 +146,9 @@ RecyclerView with StaggeredGridLayoutManager shoule be used like this:
             app:RA_span="@{main.span}">
 ```
 
-you could use 'getPosition()' in 'itemView' to get this item's posititon of its' list.
-And you could use ’app:click’ to set an OnClickListener in your item layout:
+你也可以在你的itemView中使用getPosition这个方法获取当前item在list中的位置。
+还可以使用“app:click”将OnClickListener绑定到你的布局文件中去。
+
 ```xml
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
@@ -152,7 +159,7 @@ And you could use ’app:click’ to set an OnClickListener in your item layout:
     android:layout_height="140dp">
 ```
 
-More details,you could see my Demo
+还有什么想了解的，看代码吧
 
 ## License
 
