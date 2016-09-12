@@ -1,6 +1,8 @@
 # DataBinding_EasyAdapter
 an easy way to use multi-type listView or recyclerView in Data Binding for android developer.
 
+[中文版文档](/README中文版.md)
+
 ![gif](/Demo.gif)
 ## Download
 First,you should use [the google's Data Binding framework](https://developer.android.com/tools/data-binding/guide.html)(If you are useing it,you could skip this step)
